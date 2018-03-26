@@ -1,5 +1,7 @@
 # Importing Cython Definitions from Packaged Libraries
 
+[![Build Status](https://travis-ci.org/jkleckner/cython_example.svg?branch=master)](https://travis-ci.org/jkleckner/cython_example)
+
 NOTE: I'm looking for help figuring out how to get this working with setuptools since other packages
 distribute `egg zip` files that contain the `pxd` files required for inclusion.
 
