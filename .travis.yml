@@ -19,7 +19,7 @@ before_install:
 # Note bug noted here: https://github.com/cython/cython/issues/1953 might require cython=0.25.2
 - conda create -q -n test-environment python=$PYTHON cython
 - source activate test-environment
-- pip install -r dev-requirements.txt
+# - pip install -r dev-requirements.txt
 install:
 - (cd shrubbery ; python setup.py install)
 - (cd landscaping ; python setup.py install)
