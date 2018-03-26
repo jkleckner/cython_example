@@ -1,6 +1,7 @@
 # Importing Cython Definitions from Packaged Libraries
 
-NOTE: I'm looking for help figuring out how to get this working with setuptools since other packages.
+NOTE: I'm looking for help figuring out how to get this working with setuptools since other packages
+distribute `egg zip` files that contain the `pxd` files required for inclusion.
 
 This `cython_example` package is a minimalist attempt to create and install two cython packages
 with a compiled dependency.  The [shrubbery](./shrubbery) package defines a `shrubbery.Shrubbery` class
