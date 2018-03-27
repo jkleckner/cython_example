@@ -1,8 +1,5 @@
-from distutils.core import setup
-from distutils.core import Extension
-# NOTE: setuptools will create an egg zip file and this will not extract the pxd files
-# from setuptools import setup
-# from setuptools import Extension
+from setuptools import setup
+from setuptools import Extension
 from Cython.Build import cythonize
 
 setup(
@@ -23,4 +20,6 @@ setup(
         # Note bug noted here: https://github.com/cython/cython/issues/1953 might require cython < 0.26
         "cython >= 0.22.1",
     ],
+    # Note that zip_safe needs to be false in order for the pxd files to be available to cython cimport
+    zip_safe=False,
 )
