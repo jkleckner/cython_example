@@ -23,7 +23,8 @@ setup(
         Extension(
             "landscaping.*",
             ["landscaping/landscaping.pyx"],
-            include_dirs=[shrubbery_include]
+            # Note that include_dirs is not needed once the dependent packe files are no longer zipped
+            #include_dirs=[shrubbery_include],
         )
     ),
     setup_requires=[
