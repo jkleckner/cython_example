@@ -1,8 +1,5 @@
-from distutils.core import setup
-from distutils.core import Extension
-# NOTE: setuptools will create an egg zip file and this will not extract the pxd files
-# from setuptools import setup
-# from setuptools import Extension
+from setuptools import setup
+from setuptools import Extension
 import os
 from Cython.Build import cythonize
 
@@ -26,7 +23,8 @@ setup(
         Extension(
             "landscaping.*",
             ["landscaping/landscaping.pyx"],
-            include_dirs=[shrubbery_include]
+            # Note that include_dirs is not needed once the dependent packe files are no longer zipped
+            #include_dirs=[shrubbery_include],
         )
     ),
     setup_requires=[
@@ -34,4 +32,6 @@ setup(
         "cython >= 0.22.1",
     ],
     include_package_data=True,
+    # Note that zip_safe needs to be false in order for the pxd files to be available to cython cimport
+    zip_safe=False,
 )
